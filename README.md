@@ -1,2 +1,2 @@
-# moddicom
+# Moddicom
 Radiomics toolbox for R
