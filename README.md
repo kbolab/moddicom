@@ -3,14 +3,14 @@ Radiomics toolbox for R
 
 [WORK IN PROGRESS]
 
-# Table of contents
+## Table of contents
 
-# Installation
+## Installation
 
-# Usage
+## Usage
 
-# Contributing
+## Contributing
 
-# Credits
+## Credits
 
-# License
+## License
