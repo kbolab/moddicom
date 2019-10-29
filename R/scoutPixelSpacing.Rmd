@@ -1,0 +1,124 @@
+---
+title: "Scouting Pixel Spacing"
+output:
+  html_document:
+    number_sections: yes
+    toc: yes
+    theme: cosmo
+  pdf_document:
+    number_sections: yes
+    toc: true
+    highlight: zenburn
+---
+# Density pixel spacing X
+
+```{r, echo=FALSE}
+plot(table(pixelX), main='Density plot pixel spacing X')
+```
+
+```{r, echo=FALSE}
+knitr::kable(rbind(summary(pixelX)))
+```
+
+
+```{r, echo=FALSE}
+knitr::kable(cbind("Patient"=unlist(patList), pixelX))
+```
+
+
+# Density pixel spacing Y
+
+```{r, echo=FALSE}
+plot(table(pixelY), main='Density plot pixel spacing Y')
+```
+
+```{r, echo=FALSE}
+knitr::kable(rbind(summary(pixelY)))
+```
+
+
+```{r, echo=FALSE}
+knitr::kable(cbind("Patient"=unlist(patList), pixelY))
+```
+
+# Manufacturer
+
+```{r, echo=FALSE}
+plot(table(Macchinario), main='Manufacturer')
+```
+
+```{r, echo=FALSE}
+knitr::kable(rbind(table(Macchinario)))
+```
+
+
+```{r, echo=FALSE}
+knitr::kable(cbind("Patient"=unlist(patList), Macchinario))
+```
+
+
+# SeriesDescription
+
+```{r, echo=FALSE}
+if(!is.na(DescrizioneSerie)){
+  plot(table(DescrizioneSerie), main='SeriesDescription')
+}
+```
+
+```{r, echo=FALSE}
+if(!is.na(DescrizioneSerie)){
+  knitr::kable(rbind(table(DescrizioneSerie)))
+}
+```
+
+
+```{r, echo=FALSE}
+if(!is.na(DescrizioneSerie)){
+  knitr::kable(cbind("Patient"=unlist(patList), DescrizioneSerie))
+}
+```
+
+# Slice Thickness
+
+```{r, echo=FALSE}
+plot(table(SpessoreFetta), main='SliceThickness')
+```
+
+```{r, echo=FALSE}
+knitr::kable(rbind(summary(SpessoreFetta)))
+```
+
+
+```{r, echo=FALSE}
+knitr::kable(cbind("Patient"=unlist(patList), SpessoreFetta))
+```
+
+<!-- # Echo Time -->
+
+<!-- ```{r, echo=FALSE} -->
+<!-- plot(table(TempoEcho), main='Echo Time') -->
+<!-- ``` -->
+
+<!-- ```{r, echo=FALSE} -->
+<!-- knitr::kable(rbind(table(TempoEcho))) -->
+<!-- ``` -->
+
+
+<!-- ```{r, echo=FALSE} -->
+<!-- knitr::kable(cbind("Patient"=unlist(patList), TempoEcho)) -->
+<!-- ``` -->
+
+<!-- # Relax Time -->
+
+<!-- ```{r, echo=FALSE} -->
+<!-- plot(table(TempoRelax), main='Relax Time') -->
+<!-- ``` -->
+
+<!-- ```{r, echo=FALSE} -->
+<!-- knitr::kable(rbind(table(TempoRelax))) -->
+<!-- ``` -->
+
+
+<!-- ```{r, echo=FALSE} -->
+<!-- knitr::kable(cbind("Patient"=unlist(patList), TempoRelax)) -->
+<!-- ``` -->
