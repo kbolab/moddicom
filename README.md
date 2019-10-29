@@ -1,3 +1,3 @@
 # Moddicom
 Radiomics toolbox for R
-[WORK IN PROGRES]
+[WORK IN PROGRESS]
