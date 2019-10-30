@@ -62,7 +62,7 @@ Radiomics toolbox for R
 
 Requisites for a single patient folder:
 The class geoLet allows to open a folder of a single patient. The folder must not have subfolders and it must cointain only DICOM files with extension .dcm
-In the folder there must be only one series of images (CT or MRI) and one RTStruct; optionally there can be one RTDose and/or one RTPlan.
+In the folder there must be only one series of images (CT or MRI) and one RTStruct; optionally there can be one RTDose and/or one RTPlan. The examples below can be run on the test images at https://github.com/kbolab/testImagesModdicom
 
 ### Use case 1: Extract a ROI from a single patient series
 
