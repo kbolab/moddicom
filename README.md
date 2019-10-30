@@ -5,6 +5,8 @@ Radiomics toolbox for R
 
 ## Table of contents
 
+[Installation (Windows)](#Installation (Windows) "Goto Installation (Windows)")
+
 ## Installation (Windows)
 
 1) Download and install R: https://cran.r-project.org/bin/windows/base/
