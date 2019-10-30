@@ -9,9 +9,11 @@ Radiomics toolbox for R
 * [Installation (Ubuntu)](#installation-ubuntu "Goto Installation(Ubuntu)")
 * [Installation (Mac)](#installation-mac "Goto Installation(Mac)")
 * [Usage](#usage "Goto Usage")
-  * [Use case 1: Extract a ROI from a single patient series](#use-case-1-extract-a-roi-from-a-single-patient-series "")
-  * [Use case 2: Extract features from a single patient series](#use-case-2-extract-features-from-a-single-patient-series "")
-  * [Use case 3: Extract features from multiple patients series](#use-case-3-extract-features-from-multiple-patients-series "")
+  * [Use case 1: Extract a ROI from a single patient DICOM series](#use-case-1-extract-a-roi-from-a-single-patient-dicom-series "")
+  * [Use case 2: Extract features from a single patient DICOM series](#use-case-2-extract-features-from-a-single-patient-dicom-series "")
+  * [Use case 3: Extract features from multiple patients DICOM series](#use-case-3-extract-features-from-multiple-patients-dicom-series "")
+  * [Use case 4: Extract features from multiple patients DICOM series with LoG filter](# "")
+  * [Use case 5: working with Analyize/NIFTI standard](# "")
  * [Contributing](#contributing "")
  * [Credits](#credits "")
  * [License](#license "")
@@ -64,7 +66,7 @@ Requisites for a single patient folder:
 The class geoLet allows to open a folder of a single patient. The folder must not have subfolders and it must cointain only DICOM files with extension .dcm
 In the folder there must be only one series of images (CT or MRI) and one RTStruct; optionally there can be one RTDose and/or one RTPlan. The examples below can be run on the test images at https://github.com/kbolab/testImagesModdicom
 
-### Use case 1: Extract a ROI from a single patient series
+### Use case 1: Extract a ROI from a single patient DICOM series
 
 Launch Rstudio.
 
@@ -101,7 +103,7 @@ To visualize a particular slice (the fifth in this example):
 
 ```image(GTV_voxelcube[,,5], col = grey.colors(256))```
 
-### Use case 2: Extract features from a single patient series
+### Use case 2: Extract features from a single patient DICOM series
 
 ```library(moddicom)```
 
@@ -111,7 +113,7 @@ To visualize a particular slice (the fifth in this example):
 
 ```features <- f.extractor.sing.par(path = path, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"))```
 
-### Use case 3: Extract features from multiple patients series
+### Use case 3: Extract features from multiple patients DICOM series
 
 Note: all patients must have a ROI with the same name (“GTV” in the example below)
 
@@ -122,6 +124,10 @@ Note: all patients must have a ROI with the same name (“GTV” in the example 
 ```roi <- "GTV-1"```
 
 ```Features <- f.extractor.sing.par(path = folder, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"),fileName = paste0("features",".Rdata"), forceRecalculus = FALSE)```
+
+### Use case 4: Extract features from multiple patients DICOM series with LoG filter
+
+### Use case 5: working with Analyize/NIFTI standard
 
 ## Contributing
 
