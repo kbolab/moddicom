@@ -9,7 +9,7 @@ Radiomics toolbox for R
 * [Installation (Ubuntu)](#installation-ubuntu "Goto Installation(Ubuntu)")
 * [Installation (Mac)](#installation-mac "Goto Installation(Mac)")
 * [Usage](#usage "Goto Usage")
-  * [Simple use case 1): Extract a ROI from a patient series](#use-case1 "Simple use case 1): Extract a ROI from a patient series")
+  * [Simple use case 1: Extract a ROI from a patient series](#simple-use-case-1-extract-a-roi-from-a-patient-series "Simple use case 1): Extract a ROI from a patient series")
 
 
 
@@ -58,7 +58,7 @@ Requisites for a single patient folder:
 The class geoLet allows to open a folder of a single patient. The folder must not have subfolders and it must cointain only DICOM files with extension .dcm
 In the folder there must be only one series of images (CT or MRI) and one RTStruct; optionally there can be one RTDose and/or one RTPlan.
 
-### Simple use case 1): Extract a ROI from a patient series
+### Simple use case 1: Extract a ROI from a patient series
 
 Launch Rstudio.
 
