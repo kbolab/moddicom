@@ -13,25 +13,37 @@ Radiomics toolbox for R
 4) Download and unzip DCMTK libraries: https://dicom.offis.de/dcmtk.php.en (look for “DCMTK 3.6.4 - executable binaries” and choose you OS architecture)
 5) Add the .\bin folder of the unzipped DCMTK libraries to the PATH system environment variable
 6) Launch Rstudio and run the script to install all required R packages (install_packages.R)
+7) Install moddicom from github
+
+```library(devtools)```
+
+```install_github("kbolab/moddicom")```
 
 ## Installation (Ubuntu)
 
 1) Download and install R: https://cran.r-project.org/bin/windows/base/
 2) Download and install Rstudio: https://www.rstudio.com/
-3) Download and install RTools (version Rtools34.exe already in the installation folder): https://cran.r-project.org/bin/windows/Rtools/ 
-4) Download and unzip DCMTK libraries: https://dicom.offis.de/dcmtk.php.en (look for “DCMTK 3.6.4 - executable binaries” and choose you OS architecture)
-5) Add the .\bin folder of the unzipped DCMTK libraries to the PATH system environment variable
-6) Launch Rstudio and run the script to install all required R packages (install_packages.R)
+3) Download and unzip DCMTK libraries: https://dicom.offis.de/dcmtk.php.en (look for “DCMTK 3.6.4 - executable binaries” and choose you OS architecture)
+4) Launch Rstudio and run the script to install all required R packages (install_packages.R)
+5) Install moddicom from github
 
+```library(devtools)```
+
+```install_github("kbolab/moddicom")```
+
+## Installation (Ubuntu)
 
 ## Installation (Mac)
 
 1) Download and install R: https://cran.r-project.org/bin/windows/base/
 2) Download and install Rstudio: https://www.rstudio.com/
-3) Download and install RTools (version Rtools34.exe already in the installation folder): https://cran.r-project.org/bin/windows/Rtools/ 
-4) Download and unzip DCMTK libraries: https://dicom.offis.de/dcmtk.php.en (look for “DCMTK 3.6.4 - executable binaries” and choose you OS architecture)
-5) Add the .\bin folder of the unzipped DCMTK libraries to the PATH system environment variable
-6) Launch Rstudio and run the script to install all required R packages (install_packages.R)
+3) Download and unzip DCMTK libraries: https://dicom.offis.de/dcmtk.php.en (look for “DCMTK 3.6.4 - executable binaries” and choose you OS architecture)
+4) Launch Rstudio and run the script to install all required R packages (install_packages.R)
+5) Install moddicom from github
+
+```library(devtools)```
+
+```install_github("kbolab/moddicom")```
 
 
 ## Usage
