@@ -6,8 +6,8 @@ Radiomics toolbox for R
 ## Table of contents
 
 [Installation (Windows)](#Installation(Windows) "Goto Installation (Windows)")
-[Installation (Ubuntu)](#Installation (Ubuntu) "Goto Installation (Ubuntu)")
-[Installation (Mac)](#Installation (Mac) "Goto Installation (Mac)")
+[Installation (Ubuntu)](#Installation(Ubuntu) "Goto Installation (Ubuntu)")
+[Installation (Mac)](#Installation(Mac) "Goto Installation (Mac)")
 [Usage](#Usage "Goto Usage")
 
 
