@@ -12,6 +12,8 @@ Radiomics toolbox for R
   * [Use case 1: Extract a ROI from a patient series](#use-case-1-extract-a-roi-from-a-patient-series "")
   * [Use case 2: Extract features from a patient’s series](#use-case-2-extract-features-from-a-patients-series "")
   * [Use case 3: Extract features from multiple patients’ series](#use-case-3-extract-features-from-multiple-patients-series "")
+ * [Contributing](#contributing "")
+ * [Credits](#credits "")
   
   
  
@@ -65,9 +67,9 @@ In the folder there must be only one series of images (CT or MRI) and one RTStru
 
 Launch Rstudio.
 
-Load ModdicomV2 library
+Load Moddicom library
 
-```library(moddicomV2)```
+```library(moddicom)```
 
 Create a geoLet class instance.
 
@@ -100,7 +102,7 @@ To visualize a particular slice (the fifth in this example):
 
 ### Use case 2: Extract features from a patient’s series 
 
-```library(moddicomV2)```
+```library(moddicom)```
 
 ```folder <- ".\immaginiTest\pat1"```
 
@@ -112,7 +114,7 @@ To visualize a particular slice (the fifth in this example):
 
 Note: all patients must have a ROI with the same name (“GTV-1” in the example below)
 
-```library(moddicomV2)```
+```library(moddicom)```
 
 ```folder <- ".\immaginiTest\"```
 
