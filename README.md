@@ -5,11 +5,11 @@ Radiomics toolbox for R
 
 ## Table of contents
 
-* [Installation (Windows)](#Installation(Windows) "Goto Installation(Windows)")
-* [Installation (Ubuntu)](#Installation(Ubuntu) "Goto Installation(Ubuntu)")
-* [Installation (Mac)](#Installation(Mac) "Goto Installation(Mac)")
-* [Usage](#Usage "Goto Usage")
-  * []
+* [Installation (Windows)](#installation-windows "Goto Installation(Windows)")
+* [Installation (Ubuntu)](#installation-ubuntu "Goto Installation(Ubuntu)")
+* [Installation (Mac)](#installation-mac "Goto Installation(Mac)")
+* [Usage](#usage "Goto Usage")
+  * [Simple use case 1): Extract a ROI from a patient series](#use-case1 "Simple use case 1): Extract a ROI from a patient series")
 
 
 
