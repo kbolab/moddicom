@@ -14,6 +14,7 @@ Radiomics toolbox for R
   * [Use case 3: Extract features from multiple patients’ series](#use-case-3-extract-features-from-multiple-patients-series "")
  * [Contributing](#contributing "")
  * [Credits](#credits "")
+ * [License](#license "")
   
   
  
