@@ -26,7 +26,7 @@ Radiomics toolbox for R
 3) Download and install RTools: https://cran.r-project.org/bin/windows/Rtools/ 
 4) Download and unzip DCMTK libraries: https://dicom.offis.de/dcmtk.php.en (look for “DCMTK 3.6.4 - executable binaries” and choose you OS architecture)
 5) Add the .\bin folder of the unzipped DCMTK libraries to the PATH system environment variable
-6) Launch Rstudio and run the script to install all required R packages:
+6) Launch Rstudio and run the script to install all required R packages (install_packages.R)
 7) Install moddicom from github
 
 ```library(devtools)```
@@ -78,7 +78,7 @@ Create a geoLet class instance.
 
 Load the patient image series:
 
-```obj.geolet$openDICOMFolder(pathToOpen= ".\immaginiTest\pat1")```
+```obj.geolet$openDICOMFolder(pathToOpen= ".\testImages\pat1")```
 
 moddicom will load one by one the images and file with the structures, and will align the geometries.
 
@@ -88,13 +88,13 @@ Typing:
 
 you will see the ROI names for that patient.
 
-TO extract a particular ROI, for instance “GTV-1”, you just type
+TO extract a particular ROI, for instance “GTV”, you just type
 
-```bbb <- obj.geolet$getROIVoxels(Structure = "GTV-1")```
+```roiVoxels <- obj.geolet$getROIVoxels(Structure = "GTV")```
 
 This will return a “list” data type. Since for our puroposes we’re just interested in the ROI VoxelCube, we can extract that as follows: 
 
-```GTV_voxelcube <- bbb$masked.images$voxelCube```
+```GTV_voxelcube <- roiVoxels$masked.images$voxelCube```
 
 Now is a 3D matrix with coordinates [x,y,z]
 To visualize a particular slice (the fifth in this example):
@@ -105,21 +105,21 @@ To visualize a particular slice (the fifth in this example):
 
 ```library(moddicom)```
 
-```folder <- ".\immaginiTest\pat1"```
+```folder <- ".\testImages\pat1"```
 
-```roi <- "GTV-1"```
+```roi <- "GTV"```
 
 ```features <- f.extractor.sing.par(path = path, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"))```
 
 ### Use case 3: Extract features from multiple patients series
 
-Note: all patients must have a ROI with the same name (“GTV-1” in the example below)
+Note: all patients must have a ROI with the same name (“GTV” in the example below)
 
 ```library(moddicom)```
 
-```folder <- ".\immaginiTest\"```
+```folder <- ".\testImages\"```
 
-```roi <- "GTV-1"```
+```roi <- "GTV"```
 
 ```Features <- f.extractor.sing.par(path = folder, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"),fileName = paste0("features",".Rdata"), forceRecalculus = FALSE)```
 
