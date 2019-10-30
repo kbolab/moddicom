@@ -60,8 +60,11 @@ To visualize a particular slice (the fifth in this example):
 ### Simple use case 2): Extract features from a patient’s series 
 
 ```library(moddicomV2)```
+
 ```folder <- ".\immaginiTest\pat1"```
+
 ```roi <- "GTV-1"```
+
 ```features <- f.extractor.sing.par(path = path, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"))```
 
 ### Simple use case 3): Extract features from multiple patients’ series
@@ -69,8 +72,11 @@ To visualize a particular slice (the fifth in this example):
 Note: all patients must have a ROI with the same name (“GTV-1” in the example below)
 
 ```library(moddicomV2)```
+
 ```folder <- ".\immaginiTest\"```
+
 ```roi <- "GTV-1"```
+
 ```Features <- f.extractor.sing.par(path = folder, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"),fileName = paste0("features",".Rdata"), forceRecalculus = FALSE)```
 
 ## Contributing
