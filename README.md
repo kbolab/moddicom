@@ -88,9 +88,9 @@ Typing:
 
 you will see the ROI names for that patient.
 
-TO extract a particular ROI, for instance “GTV”, you just type
+TO extract a particular ROI, for instance “GTV-1”, you just type
 
-```roiVoxels <- obj.geolet$getROIVoxels(Structure = "GTV")```
+```roiVoxels <- obj.geolet$getROIVoxels(Structure = "GTV-1")```
 
 This will return a “list” data type. Since for our puroposes we’re just interested in the ROI VoxelCube, we can extract that as follows: 
 
@@ -107,7 +107,7 @@ To visualize a particular slice (the fifth in this example):
 
 ```folder <- ".\testImages\pat1"```
 
-```roi <- "GTV"```
+```roi <- "GTV-1"```
 
 ```features <- f.extractor.sing.par(path = path, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"))```
 
@@ -119,7 +119,7 @@ Note: all patients must have a ROI with the same name (“GTV” in the example 
 
 ```folder <- ".\testImages\"```
 
-```roi <- "GTV"```
+```roi <- "GTV-1"```
 
 ```Features <- f.extractor.sing.par(path = folder, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"),fileName = paste0("features",".Rdata"), forceRecalculus = FALSE)```
 
