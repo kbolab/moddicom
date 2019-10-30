@@ -5,7 +5,7 @@ Radiomics toolbox for R
 
 ## Table of contents
 
-Markup: [Installation (Windows)](#Installation (Windows) "Goto Installation (Windows)")
+[Installation (Windows)](#Installation(Windows) "Goto Installation (Windows)")
 
 ## Installation (Windows)
 
