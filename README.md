@@ -13,7 +13,7 @@ Radiomics toolbox for R
   * [Use case 2: Extract features for a single patient DICOM series](#use-case-2-extract-features-for-a-single-patient-dicom-series "")
   * [Use case 3: Extract features for multiple patients DICOM series](#use-case-3-extract-features-for-multiple-patients-dicom-series "")
   * [Use case 4: Extract features from multiple patients DICOM series with LoG filter](#use-case-4-extract-features-from-multiple-patients-dicom-series-with-log-filter "")
-  * [Use case 5: working with Analyize/NIFTI standard](# "")
+  * [Use case 5: working with Analyize/NIFTI standard](#use-case-5-working-with-analyizenifti-standard "")
  * [Contributing](#contributing "")
  * [Credits](#credits "")
  * [License](#license "")
