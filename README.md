@@ -26,7 +26,28 @@ Radiomics toolbox for R
 3) Download and install RTools: https://cran.r-project.org/bin/windows/Rtools/ 
 4) Download and unzip DCMTK libraries: https://dicom.offis.de/dcmtk.php.en (look for “DCMTK 3.6.4 - executable binaries” and choose you OS architecture)
 5) Add the .\bin folder of the unzipped DCMTK libraries to the PATH system environment variable
-6) Launch Rstudio and run the script to install all required R packages (install_packages.R)
+6) Launch Rstudio and run the script to install all required R packages:
+
+```# ipak function: install and load multiple R packages.```
+```# check to see if packages are installed. Install them if they are not, then load them into the R session.```
+
+```ipak <- function(pkg, no_lock = TRUE){```
+```  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]```
+```  if (length(new.pkg))```
+```    if(no_lock == TRUE){```
+```      install.packages(new.pkg, dependencies = TRUE, INSTALL_opts = c('--no-lock'))```
+```      sapply(pkg, require, character.only = TRUE)```
+```    }```
+```    else if(no_lock == FALSE){```
+```      install.packages(new.pkg, dependencies = TRUE)```
+```      sapply(pkg, require, character.only = TRUE)```
+```  }```
+```}```
+
+# usage
+packages <- c("Rvcg", "XML", "data.table", "entropy", "misc3d", "moments", "oce", "plyr", "radiomics",
+              "reshape2", "radiomics", "rgl", "rmarkdown", "spatialfil", "stringr")
+ipak(packages)
 7) Install moddicom from github
 
 ```library(devtools)```
