@@ -57,7 +57,7 @@ glrlmTexturalFeaturesMerged <- function(imgObj,n_grey){
     df.R$i <- as.numeric(row.names(sumtot[[iter]]))
 
     #Convert from wide to long table. This is the preferred format for data tables and data frames
-    df.R   <- melt::melt(df.R, id.vars="i", variable.name="j", value.name="n", variable.factor=FALSE)
+    df.R   <- data.table::melt(df.R, id.vars="i", variable.name="j", value.name="n", variable.factor=FALSE)
 
     #Convert j from string to numeric
     df.R$j <- as.numeric(df.R$j)
