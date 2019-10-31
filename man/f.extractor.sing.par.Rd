@@ -5,9 +5,9 @@
 \title{Function extractor for single filter parameter}
 \usage{
 f.extractor.sing.par(path, ROIName, feature.family = c("stat", "morph",
-  "glcm", "rlm", "szm", "fractal"), filterPipeline = list(),
-  interpolate = FALSE, px = "", py = "", threshold = 0.001,
-  discretize = "", bin.size = 25, bin.number = 25,
+  "glcm", "rlm", "szm"), filterPipeline = list(), interpolate = FALSE,
+  px = "", py = "", threshold = 0.001, discretize = "",
+  bin.size = 25, bin.number = 25,
   fileName = "tmp.f.extractor.sing.par.RData", forceRecalculus = TRUE)
 }
 \arguments{

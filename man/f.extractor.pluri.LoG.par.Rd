@@ -5,12 +5,11 @@
 \title{Function extractor for multiple filter parameter}
 \usage{
 f.extractor.pluri.LoG.par(path, ROIName, feature.family = c("stat",
-  "morph", "glcm", "rlm", "szm", "fractal"), interpolate = FALSE,
-  px = "", py = "", threshold = 0.1, discretize = "",
-  bin.size = 25, bin.number = 25,
-  fileName = "tmp.f.extractor.pluri.par.RData", forceRecalculus = TRUE,
-  from.sigma = from.sigma, to.sigma = to.sigma, def.by = def.by,
-  strategy = "fixed")
+  "morph", "glcm", "rlm", "szm"), interpolate = FALSE, px = "",
+  py = "", threshold = 0.1, discretize = "", bin.size = 25,
+  bin.number = 25, fileName = "tmp.f.extractor.pluri.par.RData",
+  forceRecalculus = TRUE, from.sigma = from.sigma,
+  to.sigma = to.sigma, def.by = def.by, strategy = "fixed")
 }
 \arguments{
 \item{path}{The path to be browsed for folders containing DICOM images and Structure Set of patients}

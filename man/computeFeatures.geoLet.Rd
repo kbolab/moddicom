@@ -5,9 +5,9 @@
 \title{computeFeatures.geoLet lavora su piu}
 \usage{
 computeFeatures.geoLet(obj.geoLet, ROIName, feature.family = c("stat",
-  "morph", "glcm", "rlm", "szm", "fractal"), filterPipeline = c(),
-  px = "", py = "", threshold = 0.1, discretize = "",
-  bin.size = "", bin.number = "", n_grey = 100)
+  "morph", "glcm", "rlm", "szm"), filterPipeline = c(), px = "",
+  py = "", threshold = 0.1, discretize = "", bin.size = "",
+  bin.number = "", n_grey = 100)
 }
 \description{
 Intiate an object of the class \code{geoLet}.This represents just the classname (f.extractor.sing.par)
