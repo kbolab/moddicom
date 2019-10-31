@@ -28,7 +28,7 @@ glcmTexturalFeaturesMerged <- function(imgObj,n_grey){
     G_list[[3]] <- as.matrix(glcm(imgObj[,,i], angle = 90, normalize = F,verbose=F,n_grey = n_grey))
     G_list[[4]] <- as.matrix(glcm(imgObj[,,i], angle = 135, normalize = F,verbose=F,n_grey = n_grey))
     matrix.df <- ldply(G_list, data.table::melt, varnames=c("row", "col"))
-    sumtot[[i]] <- dcast(matrix.df, row ~ col, sum)
+    sumtot[[i]] <- acast(matrix.df, row ~ col, sum)
   }
 
   #elimino gli elementi NULL della lista

@@ -62,16 +62,16 @@ glcmTexturalFeatures25D <- function(imgObj,n_grey){
   sumtot <- list()
   ### DIRECTION 0
   matrix.df <- ldply(G_list_0, data.table::melt, varnames=c("row", "col"))
-  sumtot[[1]] <- dcast(matrix.df, row ~ col, sum)
+  sumtot[[1]] <- acast(matrix.df, row ~ col, sum)
   ### DIRECTION 45
   matrix.df <- ldply(G_list_45, data.table::melt, varnames=c("row", "col"))
-  sumtot[[2]] <- dcast(matrix.df, row ~ col, sum)
+  sumtot[[2]] <- acast(matrix.df, row ~ col, sum)
   ### DIRECTION 90
   matrix.df <- ldply(G_list_90, data.table::melt, varnames=c("row", "col"))
-  sumtot[[3]] <- dcast(matrix.df, row ~ col, sum)
+  sumtot[[3]] <- acast(matrix.df, row ~ col, sum)
   ### DIRECTION 135
   matrix.df <- ldply(G_list_135, data.table::melt, varnames=c("row", "col"))
-  sumtot[[4]] <- dcast(matrix.df, row ~ col, sum)
+  sumtot[[4]] <- acast(matrix.df, row ~ col, sum)
 
 
 

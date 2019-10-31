@@ -28,7 +28,7 @@ glszmTexturalFeatures25D <- function(imgObj,px=2,py=2,pz=2,n_grey){
   }
   
   matrix.df <- ldply(S_list, data.table::melt, varnames=c("row", "col"))
-  sumtot <- dcast(matrix.df, row ~ col, sum)
+  sumtot <- acast(matrix.df, row ~ col, sum)
 
 
   #Initialise data table for storing GLCM features; I have added a few
