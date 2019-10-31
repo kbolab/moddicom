@@ -120,8 +120,11 @@ Extract the features with the "single patient" method:
 ### Use case 3: Extract features from multiple patients DICOM series with LoG filter
 
 ```library(moddicom)```
+
 ```path <- "./test/Images"```
+
 ```roi <- "GTV-1"```
+
 ```features <- f.extractor.pluri.LoG.par(path = path, ROIName = roi, from.sigma = 0.6, to.sigma = 1.0, def.by =  0.2, feature.family=c("stat","morph","glcm","rlm","szm"))```
 
 
