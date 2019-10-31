@@ -18,7 +18,7 @@
 #' @param def.by The sigma step to be analyzed
 #' @param strategy The strategy to be applied for the radiomics analysis, by default "fixed". For now no other strategy have been implemented.
 #' @export 
-#' @import radiomics data.table plyr reshape2
+#' @import radiomics data.table plyr
 #' @examples \dontrun{
 #' f.extractor.pluri.LoG.par(path = './RadiomicsFolder', ROIName = 'GTV', feature.family = c('stat', 'glcm'), forceRecalculus = T, from.sigma = 0.3, to.sigma = 2, def.by = 0.1)
 #' }

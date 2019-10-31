@@ -64,16 +64,16 @@ glrlmTexturalFeatures25D <- function(imgObj,n_grey){
   
   sumtot <- list()
   ### DIRECTION 0
-  matrix.df <- ldply(R_list_0, data.table::melt, varnames=c("row", "col"))
+  matrix.df <- ldply(R_list_0, reshape2::melt, varnames=c("row", "col"))
   sumtot[[1]] <- acast(matrix.df, row ~ col, sum)
   ### DIRECTION 45
-  matrix.df <- ldply(R_list_45, data.table::melt, varnames=c("row", "col"))
+  matrix.df <- ldply(R_list_45, reshape2::melt, varnames=c("row", "col"))
   sumtot[[2]] <- acast(matrix.df, row ~ col, sum)
   ### DIRECTION 90
-  matrix.df <- ldply(R_list_90, data.table::melt, varnames=c("row", "col"))
+  matrix.df <- ldply(R_list_90, reshape2::melt, varnames=c("row", "col"))
   sumtot[[3]] <- acast(matrix.df, row ~ col, sum)
   ### DIRECTION 135
-  matrix.df <- ldply(R_list_135, data.table::melt, varnames=c("row", "col"))
+  matrix.df <- ldply(R_list_135, reshape2::melt, varnames=c("row", "col"))
   sumtot[[4]] <- acast(matrix.df, row ~ col, sum)
 
   #Initialise data table for storing GLCM features; I have added a few
@@ -101,7 +101,7 @@ glrlmTexturalFeatures25D <- function(imgObj,n_grey){
     df.R$i <- as.numeric(row.names(sumtot[[iter]]))
 
     #Convert from wide to long table. This is the preferred format for data tables and data frames
-    df.R   <- data.table::melt(df.R, id.vars="i", variable.name="j", value.name="n", variable.factor=FALSE)
+    df.R   <- reshape2::melt(df.R, id.vars="i", variable.name="j", value.name="n", variable.factor=FALSE)
 
     #Convert j from string to numeric
     df.R$j <- as.numeric(df.R$j)
