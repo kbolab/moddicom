@@ -25,7 +25,6 @@ Imports:
     oro.nifti,
     plyr,
     radiomics,
-    reshape2,
     rgl,
     rmarkdown,
     spatialfil,
