@@ -9,11 +9,10 @@ Radiomics toolbox for R
 * [Installation (Ubuntu)](#installation-ubuntu "Goto Installation(Ubuntu)")
 * [Installation (Mac)](#installation-mac "Goto Installation(Mac)")
 * [Usage](#usage "Goto Usage")
-  * [Use case 1: Extract a ROI for a single patient DICOM series](#use-case-1-extract-a-roi-for-a-single-patient-dicom-series "")
-  * [Use case 2: Extract features for a single patient DICOM series](#use-case-2-extract-features-for-a-single-patient-dicom-series "")
-  * [Use case 3: Extract features for multiple patients DICOM series](#use-case-3-extract-features-for-multiple-patients-dicom-series "")
-  * [Use case 4: Extract features from multiple patients DICOM series with LoG filter](#use-case-4-extract-features-from-multiple-patients-dicom-series-with-log-filter "")
-  * [Use case 5: working with Analyize/NIFTI standard](#use-case-5-working-with-analyizenifti-standard "")
+  * [Use case 1: Extract a ROI for a single patient DICOM series](#use-case-1-extract-features-for-a-single-patient-dicom-series "")
+  * [Use case 2: Extract features for a single patient DICOM series](#use-case-2-extract-features-for-multiple-patients-dicom-series "")
+  * [Use case 3: Extract features for multiple patients DICOM series with LoG filter](#use-case-3-extract-features-for-multiple-patients-dicom-series-with-log-filter "")
+  * [Use case 4: working with Analyize/NIFTI standard](#use-case-4-working-with-analyizenifti-standard "")
  * [Contributing](#contributing "")
  * [Credits](#credits "")
  * [License](#license "")
@@ -107,7 +106,7 @@ Extract the features with the "single patient" method:
 
 ```features <- computeFeatures.geoLet(obj.geoLet = obj.geolet, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"))```
 
-### Use case 2: Extract features from multiple patients DICOM series
+### Use case 2: Extract features for multiple patients DICOM series
 
 ```library(moddicom)```
 
@@ -117,7 +116,7 @@ Extract the features with the "single patient" method:
 
 ```features <- f.extractor.sing.par(path = path, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"))```
 
-### Use case 3: Extract features from multiple patients DICOM series with LoG filter
+### Use case 3: Extract features for multiple patients DICOM series with LoG filter
 
 ```library(moddicom)```
 
