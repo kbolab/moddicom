@@ -12,7 +12,6 @@ Radiomics toolbox for R
   * [Use case 1: Extract features for a single patient DICOM series](#use-case-1-extract-features-for-a-single-patient-dicom-series "")
   * [Use case 2: Extract features for multiple patients DICOM series](#use-case-2-extract-features-for-multiple-patients-dicom-series "")
   * [Use case 3: Extract features for multiple patients DICOM series with LoG filter](#use-case-3-extract-features-for-multiple-patients-dicom-series-with-log-filter "")
-  * [Use case 4: working with Analyize/NIFTI standard](#use-case-4-working-with-analyizenifti-standard "")
  * [Contributing](#contributing "")
  * [Credits](#credits "")
  * [License](#license "")
@@ -125,9 +124,6 @@ Extract the features with the "single patient" method:
 ```roi <- "GTV-1"```
 
 ```features <- f.extractor.pluri.LoG.par(path = path, ROIName = roi, from.sigma = 0.6, to.sigma = 1.0, def.by =  0.2, feature.family=c("stat","morph","glcm","rlm","szm"))```
-
-
-### Use case 4: working with Analyize/NIFTI standard
 
 ## Contributing
 
