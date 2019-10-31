@@ -18,12 +18,12 @@
 #' @param def.by The sigma step to be analyzed
 #' @param strategy The strategy to be applied for the radiomics analysis, by default "fixed". For now no other strategy have been implemented.
 #' @export 
-#' @import radiomics data.table plyr
+#' @import radiomics data.table plyr reshape2
 #' @examples \dontrun{
 #' f.extractor.pluri.LoG.par(path = './RadiomicsFolder', ROIName = 'GTV', feature.family = c('stat', 'glcm'), forceRecalculus = T, from.sigma = 0.3, to.sigma = 2, def.by = 0.1)
 #' }
 f.extractor.pluri.LoG.par<- function(path, ROIName,
-                                 feature.family=c("stat","morph","glcm","rlm","szm","fractal"),
+                                 feature.family=c("stat","morph","glcm","rlm","szm"),
                                  interpolate = FALSE, px="", py="", threshold = .1, discretize="", bin.size = 25, bin.number=25,
                                  fileName = "tmp.f.extractor.pluri.par.RData" ,
                                  forceRecalculus = TRUE, from.sigma=from.sigma, to.sigma=to.sigma, def.by = def.by, strategy="fixed") {
@@ -92,7 +92,7 @@ f.extractor.pluri.LoG.par<- function(path, ROIName,
 #' f.extractor.sing.par(path = './RadiomicsFolder', ROIName = 'GTV', feature.family = c('stat', 'glcm'), filterPipeline = filterPip, forceRecalculus = T)
 #' }
 f.extractor.sing.par<- function(path, ROIName ,
-                          feature.family=c("stat","morph","glcm","rlm","szm","fractal"),
+                          feature.family=c("stat","morph","glcm","rlm","szm"),
                           filterPipeline=list(), interpolate = FALSE, px="", py="", threshold = .001, discretize="", bin.size = 25, bin.number=25,
                           fileName = "tmp.f.extractor.sing.par.RData" ,
                           forceRecalculus = TRUE) {
@@ -208,7 +208,7 @@ print.ROImap <- function(obj) {
 #'
 #' @description  Intiate an object of the class \code{geoLet}.This represents just the classname (f.extractor.sing.par)
 #' @export
-computeFeatures.geoLet<- function( obj.geoLet, ROIName , feature.family=c("stat","morph","glcm","rlm","szm","fractal"), filterPipeline=c(),
+computeFeatures.geoLet<- function( obj.geoLet, ROIName , feature.family=c("stat","morph","glcm","rlm","szm"), filterPipeline=c(),
                                    px = "", py ="", threshold = .1, discretize="", bin.size = "", bin.number="", n_grey = 100) {
 
   objS <- services()
