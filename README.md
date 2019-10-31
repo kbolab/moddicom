@@ -134,7 +134,28 @@ patID  | F_stat.mean
 
 ```features <- f.extractor.pluri.LoG.par(path = path, ROIName = roi, from.sigma = 0.6, to.sigma = 1.0, def.by =  0.2, feature.family=c("stat","morph","glcm","rlm","szm"))```
 
-Result is a length 3 ```list``` (one for each sigma value) of 2 by 233 ```data.frame```
+Result is a length 3 ```list``` (one for each sigma value) of 2 by 233 ```data.frame```. The first two column for the 3 dataframes are reported below:
+
+```features$`0.6`[,1:2]```
+
+patID  | F_stat.mean
+------------- | -------------
+./test/Images/PAT1  | -11.22115
+./test/Images/PAT2  | 56.40802
+
+```features$`0.8`[,1:2]```
+
+patID  | F_stat.mean
+------------- | -------------
+./test/Images/PAT1  | 12.7684
+./test/Images/PAT2  | 261.2649
+
+```features$`1`[,1:2]```
+
+patID  | F_stat.mean
+------------- | -------------
+./test/Images/PAT1  | 211.4133
+./test/Images/PAT2  | 1954.8270
 
 ## Contributing
 
