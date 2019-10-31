@@ -1,4 +1,4 @@
-Package: moddicomV2
+Package: moddicom
 Type: Package
 Title: Package for handling DICOM RT files
 Version: 0.51
