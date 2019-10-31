@@ -1,9 +1,4 @@
-######################################
-### BEGIN FUNCION ####################
-######################################
 
-
-#' @import radiomics data.table
 
 glcmTexturalFeatures25Dmerged <- function(imgObj,n_grey){
 
@@ -29,6 +24,7 @@ glcmTexturalFeatures25Dmerged <- function(imgObj,n_grey){
     G_list_90[[i]] <- as.matrix(glcm(imgObj[,,i], angle = 90, normalize = F,verbose=F,n_grey = n_grey))
     G_list_135[[i]] <- as.matrix(glcm(imgObj[,,i], angle = 135, normalize = F,verbose=F,n_grey = n_grey))
   }
+  
   
   #elimino gli elementi NULL della lista
   if(length(G_list_0)!=0){
@@ -60,6 +56,7 @@ glcmTexturalFeatures25Dmerged <- function(imgObj,n_grey){
 
   sumtot <- list()
   ### DIRECTION 0
+
   matrix.df <- ldply(G_list_0, data.table::melt, varnames=c("row", "col"))
   sumtot[[1]] <- acast(matrix.df, row ~ col, sum)
   ### DIRECTION 45

@@ -24,7 +24,6 @@ Imports:
     oce,
     oro.nifti,
     plyr,
-    reshape2,
     radiomics,
     rgl,
     rmarkdown,

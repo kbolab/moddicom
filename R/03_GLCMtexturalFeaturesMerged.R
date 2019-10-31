@@ -3,7 +3,7 @@
 ######################################
 
 
-#' @import radiomics data.table reshape2
+#' @import radiomics data.table
 
 glcmTexturalFeaturesMerged <- function(imgObj,n_grey){
 

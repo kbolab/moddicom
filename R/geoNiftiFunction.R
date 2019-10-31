@@ -1,4 +1,4 @@
-#' class for loading and presenting DICOM data
+#' class for loading and presenting NIFTI data
 #' 
 #' @description  Instantiate an object of the class \code{geoNIFTI}.This represents just the classname, 
 #'               methods are exposed with the technique of 'closure'.

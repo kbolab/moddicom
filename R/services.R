@@ -526,3 +526,159 @@ writeLog<-function(  stringa, file = path ) {
 }
 # -fm Carlotta 23112017
 
+
+#- inizio modifica jl 31/10/2019: inserisco le funzioni cast di reshape2 per evitare il warning in library(moddicom) su conflitto con data.table
+
+cast <- function(data, formula, fun.aggregate = NULL, ..., subset = NULL, fill = NULL, drop = TRUE, value.var = guess_value(data), value_var) {
+  
+  if (!missing(value_var)) {
+    stop("Please use value.var instead of value_var.", call. = FALSE)
+  }
+  if (!(value.var %in% names(data))) {
+    stop("value.var (", value.var, ") not found in input", call. = FALSE)
+  }
+  
+  if (!is.null(subset)) {
+    include <- data.frame(eval.quoted(subset, data))
+    data <- data[rowSums(include) == ncol(include), ]
+  }
+  
+  formula <- parse_formula(formula, names(data), value.var)
+  value <- data[[value.var]]
+  
+  # Need to branch here depending on whether or not we have strings or
+  # expressions - strings should avoid making copies of the data
+  vars <- lapply(formula, eval.quoted, envir = data, enclos = parent.frame(2))
+  
+  # Compute labels and id values
+  ids <- lapply(vars, id, drop = drop)
+  
+  # Empty specifications (.) get repeated id
+  is_empty <- vapply(ids, length, integer(1)) == 0
+  empty <- structure(rep(1, nrow(data)), n = 1L)
+  ids[is_empty] <- rep(list(empty), sum(is_empty))
+  
+  labels <- mapply(split_labels, vars, ids, MoreArgs = list(drop = drop),
+                   SIMPLIFY = FALSE, USE.NAMES = FALSE)
+  labels[is_empty] <- rep(list(data.frame(. = ".")), sum(is_empty))
+  
+  overall <- id(rev(ids), drop = FALSE)
+  n <- attr(overall, "n")
+  
+  # Aggregate duplicates
+  if (any(duplicated(overall)) || !is.null(fun.aggregate)) {
+    if (is.null(fun.aggregate)) {
+      message("Aggregation function missing: defaulting to length")
+      fun.aggregate <- length
+    }
+    
+    ordered <- vaggregate(.value = value, .group = overall,
+                          .fun = fun.aggregate, ...,  .default = fill, .n = n)
+    overall <- seq_len(n)
+    
+  } else {
+    # Add in missing values, if necessary
+    if (length(overall) < n) {
+      overall <- match(seq_len(n), overall, nomatch = NA)
+    } else {
+      overall <- order(overall)
+    }
+    
+    ordered <- value[overall]
+    if (!is.null(fill)) {
+      ordered[is.na(ordered)] <- fill
+    }
+  }
+  
+  ns <- vapply(ids, attr, double(1), "n")
+  dim(ordered) <- ns
+  
+  list(
+    data = ordered,
+    labels = labels
+  )
+}
+
+
+dcast <- function(data, formula, fun.aggregate = NULL, ..., margins = NULL, subset = NULL, fill=NULL, drop = TRUE, value.var = guess_value(data))  {
+  
+  formula <- parse_formula(formula, names(data), value.var)
+  if (length(formula) > 2) {
+    stop("Dataframes have at most two output dimensions")
+  }
+  
+  if (!is.null(margins)) {
+    data <- add_margins(data, lapply(formula, names), margins)
+  }
+  
+  res <- cast(data, formula, fun.aggregate, ...,
+              subset = subset, fill = fill, drop = drop,
+              value.var = value.var)
+  
+  data <- as.data.frame.matrix(res$data, stringsAsFactors = FALSE)
+  names(data) <- array_names(res$labels[[2]])
+  
+  stopifnot(nrow(res$labels[[1]]) == nrow(data))
+  cbind(res$labels[[1]], data)
+}
+
+
+acast <- function(data, formula, fun.aggregate = NULL, ..., margins = NULL, subset = NULL, fill=NULL, drop = TRUE, value.var = guess_value(data)) {
+  
+  formula <- parse_formula(formula, names(data), value.var)
+  
+  if (!is.null(margins)) {
+    data <- add_margins(data, lapply(formula, names), margins)
+  }
+  
+  res <- cast(data, formula, fun.aggregate, ...,
+              subset = subset, fill = fill, drop = drop, value.var = value.var)
+  
+  dimnames(res$data) <- lapply(res$labels, array_names)
+  res$data
+}
+
+array_names <- function(df) {
+  do.call(paste, c(df, list(sep = "_")))
+}
+
+parse_formula <- function(formula = "...  ~ variable", varnames, value.var = "value") {
+  remove.placeholder <- function(x) x[x != "."]
+  replace.remainder <- function(x) {
+    if (any(x == "...")) c(x[x != "..."], remainder) else x
+  }
+  
+  if (is.formula(formula)) {
+    formula <- str_c(deparse(formula, 500), collapse = "")
+  }
+  
+  if (is.character(formula)) {
+    dims <- str_split(formula, fixed("~"))[[1]]
+    formula <- lapply(str_split(dims, "[+*]"), str_trim)
+    
+    formula <- lapply(formula, remove.placeholder)
+    
+    all_vars <- unlist(formula)
+    if (any(all_vars == "...")) {
+      remainder <- setdiff(varnames, c(all_vars, value.var))
+      formula <- lapply(formula, replace.remainder)
+    }
+  }
+  
+  if (!is.list(formula)) {
+    stop("Don't know how to parse", formula, call. = FALSE)
+  }
+  
+  lapply(formula, as.quoted)
+}
+
+
+guess_value <- function(df) {
+  if ("value" %in% names(df)) return("value")
+  if ("(all)" %in% names(df)) return("(all)")
+  
+  last <- names(df)[ncol(df)]
+  message("Using ", last, " as value column: use value.var to override.")
+  
+  last
+}

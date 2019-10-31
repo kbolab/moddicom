@@ -2,7 +2,7 @@
 % Please edit documentation in R/geoNiftiFunction.R
 \name{geoNIFTI}
 \alias{geoNIFTI}
-\title{class for loading and presenting DICOM data}
+\title{class for loading and presenting NIFTI data}
 \usage{
 geoNIFTI()
 }
