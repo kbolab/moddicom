@@ -66,7 +66,7 @@ Requisites for a single patient folder:
 The class geoLet allows to open a folder of a single patient. The folder must not have subfolders and it must cointain only DICOM files with extension .dcm
 In the folder there must be only one series of images (CT or MRI) and one RTStruct; optionally there can be one RTDose and/or one RTPlan. The examples below can be run on the test images at https://github.com/kbolab/testImagesModdicom
 
-### Use case 1: Extract a ROI from a single patient DICOM series
+### Use case 1: Extract features for a single patient DICOM series
 
 Launch Rstudio.
 
@@ -80,7 +80,7 @@ Create a geoLet class instance.
 
 Load the patient image series:
 
-```obj.geolet$openDICOMFolder(pathToOpen= ".\testImages\pat1")```
+```obj.geolet$openDICOMFolder(pathToOpen= "./test/Images/PAT1")```
 
 moddicom will load one by one the images and file with the structures, and will align the geometries.
 
@@ -103,31 +103,23 @@ To visualize a particular slice (the fifth in this example):
 
 ```image(GTV_voxelcube[,,5], col = grey.colors(256))```
 
-### Use case 2: Extract features from a single patient DICOM series
+Extract the features with the "single patient" method:
+
+```features <- computeFeatures.geoLet(obj.geoLet = obj.geolet, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"))```
+
+### Use case 2: Extract features from multiple patients DICOM series
 
 ```library(moddicom)```
 
-```folder <- ".\testImages\pat1"```
+```path <- "./test/Images"```
 
 ```roi <- "GTV-1"```
 
 ```features <- f.extractor.sing.par(path = path, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"))```
 
-### Use case 3: Extract features from multiple patients DICOM series
+### Use case 3: Extract features from multiple patients DICOM series with LoG filter
 
-Note: all patients must have a ROI with the same name (“GTV” in the example below)
-
-```library(moddicom)```
-
-```folder <- ".\testImages\"```
-
-```roi <- "GTV-1"```
-
-```Features <- f.extractor.sing.par(path = folder, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"),fileName = paste0("features",".Rdata"), forceRecalculus = FALSE)```
-
-### Use case 4: Extract features from multiple patients DICOM series with LoG filter
-
-### Use case 5: working with Analyize/NIFTI standard
+### Use case 4: working with Analyize/NIFTI standard
 
 ## Contributing
 
