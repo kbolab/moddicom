@@ -21,7 +21,7 @@ glrlmTexturalFeaturesMerged <- function(imgObj,n_grey){
     R_list[[3]] <- as.matrix(glrlm(imgObj[,,i], angle = 90, verbose=F,truncate = F, n_grey = n_grey))
     R_list[[4]] <- as.matrix(glrlm(imgObj[,,i], angle = 135, verbose=F,truncate = F, n_grey = n_grey))
     Nv[i] <- length(imgObj[,,i][which(!is.na(imgObj[,,i]))])*4
-    matrix.df <- ldply(R_list, melt::melt, varnames=c("row", "col"))
+    matrix.df <- ldply(R_list, data.table::melt, varnames=c("row", "col"))
     sumtot[[i]] <- acast(matrix.df, row ~ col, sum)
   }
 
