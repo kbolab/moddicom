@@ -105,6 +105,8 @@ Extract the features with the "single patient" method:
 
 ```features <- computeFeatures.geoLet(obj.geoLet = obj.geolet, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"))```
 
+Result is a list of 232 features, whose first element is ```features$F_stat.mean``` and equals ```-46.88272``` in this example.
+
 ### Use case 2: Extract features for multiple patients DICOM series
 
 ```library(moddicom)```
@@ -114,6 +116,13 @@ Extract the features with the "single patient" method:
 ```roi <- "GTV-1"```
 
 ```features <- f.extractor.sing.par(path = path, ROIName = roi, feature.family=c("stat","morph","glcm","rlm","szm"))```
+
+Result is a 2 by 233 ```data.frame```, whose first two column are ```features[,1:2]```:
+
+patID  | F_stat.mean
+------------- | -------------
+./test/Images/PAT1  | -46.88272
+./test/Images/PAT2  | -257.72518
 
 ### Use case 3: Extract features for multiple patients DICOM series with LoG filter
 
