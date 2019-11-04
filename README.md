@@ -1,8 +1,6 @@
 # Moddicom
 Radiomics toolbox for R
 
-[WORK IN PROGRESS]
-
 ## Table of contents
 
 * [Installation (Windows)](#installation-windows "Goto Installation(Windows)")
