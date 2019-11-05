@@ -21,7 +21,7 @@
 #'
 #' }
 #' @export
-#' @useDynLib moddicomV2
+#' @useDynLib moddicom
 #' @import rmarkdown
 RAD.scoutV2 <- function (path){
   attr.G.def.RMark.dir<-''

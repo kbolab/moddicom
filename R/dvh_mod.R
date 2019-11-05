@@ -327,7 +327,7 @@ DVH.absolute<-function(dvh) {
 #' @return A vector containing the values of EUD(s) for the given DVH(s)
 #' @export
 #' @references Niemierko A. \emph{Reporting and analyzing dose distributions: a concept of equivalent uniform dose.} Med Phys. 1997 Jan;24(1):103-10. PubMed PMID: 9029544.
-#' @useDynLib moddicomV2
+#' @useDynLib moddicom
 DVH.eud<-function(dvh, a = 1) {
   dvh<-DVH.cum.to.diff(dvh = dvh)
   dvh<-DVH.relative(dvh = dvh)
@@ -677,7 +677,7 @@ DVH.Dvolume <- function(dvh,  Volume=0.001) {
 #' @return A \code{dvhmatrix} object where 7 columns: Dose, mean DVH, low C.I. of mean DVH, high C.I. of mean DVH, 
 #'         median DVH, low C.I. of median DVH, high C.I. of median DVH.
 #' @export
-#' @useDynLib moddicomV2
+#' @useDynLib moddicom
 #' @examples ## creates a dvhmatrix class object with 100 DVHs
 #' a<-DVH.generate(dvh.number = 100, dvh.type = "cumulative", vol.distr = "relative")
 #' b<-DVH.baseStat(dvh = a)

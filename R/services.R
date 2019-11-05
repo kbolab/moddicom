@@ -1,7 +1,7 @@
 #' service class
 #'
 #' @description  It handles messages from script to a chosen output (screen, file, etc.)
-#' @useDynLib moddicomV2
+#' @useDynLib moddicom
 #' @export
 #' @import stringr XML
 services<-function() {
@@ -479,7 +479,7 @@ services<-function() {
 #' Mesh volume and surface
 #'
 #' @description  function for calculating the Volume of a Mesh
-#' @useDynLib moddicomV2
+#' @useDynLib moddicom
 #'
 #'
 StructureVolume<-function(mesh, measure.unit=c("cm3", "mm3")) {
@@ -497,7 +497,7 @@ StructureVolume<-function(mesh, measure.unit=c("cm3", "mm3")) {
 #' Mesh surface
 #'
 #' @description  function for calculating the Surface of a Mesh
-#' @useDynLib moddicomV2
+#' @useDynLib moddicom
 #'
 #'
 StructureSurface<-function(mesh, measure.unit=c("cm2", "mm2")) {
@@ -517,7 +517,7 @@ StructureSurface<-function(mesh, measure.unit=c("cm2", "mm2")) {
 #'
 #' @description scrive quanto indicato come stringa nell'oggetto stringa
 #'  su un file esterno nel path indicato nel LogFilePath 
-#' @useDynLib moddicomV2
+#' @useDynLib moddicom
 #'
 writeLog<-function(  stringa, file = path ) {
   

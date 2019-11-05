@@ -42,7 +42,7 @@ fractalFeatures <- function(imgObj,fstPerc=0, lstPerc=100, ThDown=0, ThUp=100, o
   return(risultato)
 }
 
-#' @useDynLib moddicomV2
+#' @useDynLib moddicom
 DFCalculator<-function(imgObj, onepxwide=T){
   #DFCalculator prende in ingresso un oggetto GeoLet. L'immagine è gia stata passata da Thresholder
   #Questa funzione restituisce lo stesso Geolet, ma con dentro i VoxelCube le immagini normalizzate

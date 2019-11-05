@@ -13,7 +13,7 @@
 #' b<-FIL.applyFilter( a , kernel.type="gaussian", sigma=1.4)
 #' }#' 
 #' @export
-#' @useDynLib moddicomV2
+#' @useDynLib moddicom
 #' @import spatialfil
 FIL.applyFilter<-function( arr2App, kernel.type, sigma = 1.4 ) {
   if( is.null(sigma) ) sigma = 1.4;
@@ -62,7 +62,7 @@ FIL.applyFilter<-function( arr2App, kernel.type, sigma = 1.4 ) {
 #' @param cropResult is a boolean (\code{TRUE} or \code{FALSE}) which indicates if the result should be cropped or not, in order to save memory. Default is \code{TRUE}
 #' @param scaleFactor can be 'voxel' or 'space'. If 'voxel' (the default) it consider the sam sigma values (if specified) for all the geoLet object, if 'space' it normalize the sigma according to the different pixelSpacing.
 #' @return a list containing the filtered images (cropped or not)
-#' @useDynLib moddicomV2
+#' @useDynLib moddicom
 #' @examples \dontrun{
 #' # DEPRECATED!!!!!
 #' } 
@@ -178,7 +178,7 @@ FIL.applyFilterToStudy<-function(obj.mmButo, ROINameForNormalization=NA, valueFo
 #' @param ROINameForNormalization Optional, default \code{NA}. If you want to normalize the voxelCubes accoring to some specific ROIs (i.e. Urin) you can indicate here the ROIName. By this way, the other parameter \code{upperValueForNormalization}. Signals into such ROIS will be aligned at the biggest.
 #' @return a list containing the filtered images (cropped or not)
 #' @export
-#' @useDynLib moddicomV2 
+#' @useDynLib moddicom
 #' @examples \dontrun{
 #' # Create an instante of new.mmButo and load some cases
 #' obj<-new.mmButo()
@@ -314,7 +314,7 @@ FIL.2D.conv.Filter<-function(obj.mmButo,ROIName, filter.pipeline ,collection="de
 #' @param ROINameForNormalization Optional, default \code{NA}. If you want to normalize the voxelCubes accoring to some specific ROIs (i.e. Urin) you can indicate here the ROIName. By this way, the other parameter \code{upperValueForNormalization}. Signals into such ROIS will be aligned at the biggest.
 #' @return a list containing the filtered images (cropped or not)
 #' @export
-#' @useDynLib moddicomV2 
+#' @useDynLib moddicom
 #' @examples \dontrun{
 #' # Create an instante of new.mmButo and load some cases
 #' obj<-geoLet()
@@ -577,7 +577,7 @@ old.FIL.2D.conv.Filter.geoLet<-function(obj.geoLet,ROIName, filter.pipeline ,col
 #' @param ROINameForNormalization Optional, default \code{NA}. If you want to normalize the voxelCubes accoring to some specific ROIs (i.e. Urin) you can indicate here the ROIName. By this way, the other parameter \code{upperValueForNormalization}. Signals into such ROIS will be aligned at the biggest.
 #' @return a list containing the filtered images (cropped or not)
 #' @export
-#' @useDynLib moddicomV2 
+#' @useDynLib moddicom
 #' @examples \dontrun{
 #' # Create an instante of new.mmButo and load some cases
 #' obj<-geoLet()

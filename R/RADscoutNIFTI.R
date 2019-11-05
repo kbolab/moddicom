@@ -13,7 +13,7 @@
 #'
 #' }
 #' @export
-#' @useDynLib moddicomV2
+#' @useDynLib moddicom
 #' @import rmarkdown
 RAD.scoutNIFTI<- function (path,regexp_roi){
   

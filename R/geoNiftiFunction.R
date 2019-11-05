@@ -19,7 +19,7 @@
 #' }
 #' @export 
 #' @import oro.nifti
-#' @useDynLib moddicomV2 
+#' @useDynLib moddicom
 #' 
 
 
