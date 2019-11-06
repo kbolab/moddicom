@@ -158,4 +158,6 @@ patID  | F_stat.mean
 
 ## Credits
 
+"Dinapoli N, et al. Moddicom: a complete and easily accessible library for prognostic evaluations relying on image features. Conf Proc IEEE Eng Med Biol Soc. 2015 Aug;2015:771-4. doi: 10.1109/EMBC.2015.7318476."
+
 ## License
