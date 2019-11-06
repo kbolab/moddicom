@@ -1,7 +1,7 @@
 Package: moddicom
 Type: Package
 Title: Package for handling DICOM RT files
-Version: 0.51
+Version: 0.52
 Date: 2014-11-26
 Author: Nicola Dinapoli, Roberto Gatta, Jacopo Lenkowicz, Carlotta Masciocchi
 Maintainer: Jacopo lenkowicz <jacopo.lenkowicz@gmail.com>, Nicola Dinapoli <nicola.dinapoli@rm.unicatt.it>
