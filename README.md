@@ -24,7 +24,7 @@ Radiomics toolbox for R
 1) Download and install R v3: https://cran.r-project.org/bin/windows/base/
 2) Download and install Rstudio: https://www.rstudio.com/
 3) Download and install RTools: https://cran.r-project.org/bin/windows/Rtools/ 
-4) Download and unzip DCMTK libraries: https://dicom.offis.de/dcmtk.php.en (look for “DCMTK - executable binaries” and choose you OS architecture)
+4) Download and unzip DCMTK libraries: https://dicom.offis.de/dcmtk.php.en  (look for “DCMTK - executable binaries” and choose you OS architecture)
 5) Add the .\bin folder of the unzipped DCMTK libraries to the PATH system environment variable
 6) Install moddicom from github
 
