@@ -344,7 +344,7 @@ geoLet<-function(ROIVoxelMemoryCache = TRUE ,
     threshold<-min(pip.arr.exploded[which(!is.na(pip.arr.exploded))])-1000  # prendi il minimo e togli ancora 1000
     pip.arr.exploded[which(is.na(pip.arr.exploded),arr.ind = T )]<-threshold
     #mesh.triangle<-contour3d(f = pip.arr.exploded, level = 1, x = x.coor, y = y.coor, rev(z.coor), engine = "none")
-    browser()
+    #browser()
     mesh.triangle<-contour3d(f = pip.arr.exploded, level = threshold+10, x = x.coor, y = y.coor, rev(z.coor), engine = "none")
     
     # passa dai triangoli alle mesh
